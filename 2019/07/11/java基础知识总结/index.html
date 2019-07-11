@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "8e4fa588"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="date: 2019-07-10 11:08:24  java 概述：    &amp;ensp;&amp;ensp;1991 年Sun公司的James Gosling等人开始开发名称为 Oak 的语言，希望用于控制嵌入在有线电视交换盒、PDA等的微处理器；1994年将Oak语言更名为Java；java的三种技术架构：&amp;ensp;&amp;ensp;JAVAEE Java Platform Enterprise Edit">
+<meta name="keywords" content="java基础知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java基础知识总结">
+<meta property="og:url" content="https://liuxiaoyang1.github.io.git/2019/07/11/java基础知识总结/index.html">
+<meta property="og:site_name" content="CodeDog">
+<meta property="og:description" content="date: 2019-07-10 11:08:24  java 概述：    &amp;ensp;&amp;ensp;1991 年Sun公司的James Gosling等人开始开发名称为 Oak 的语言，希望用于控制嵌入在有线电视交换盒、PDA等的微处理器；1994年将Oak语言更名为Java；java的三种技术架构：&amp;ensp;&amp;ensp;JAVAEE Java Platform Enterprise Edit">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-11T08:22:44.649Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java基础知识总结">
+<meta name="twitter:description" content="date: 2019-07-10 11:08:24  java 概述：    &amp;ensp;&amp;ensp;1991 年Sun公司的James Gosling等人开始开发名称为 Oak 的语言，希望用于控制嵌入在有线电视交换盒、PDA等的微处理器；1994年将Oak语言更名为Java；java的三种技术架构：&amp;ensp;&amp;ensp;JAVAEE Java Platform Enterprise Edit">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://liuxiaoyang1.github.io.git/2019/07/11/java基础知识总结/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>java基础知识总结 | CodeDog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+		<a href="https://github.com/liuxiaoyang" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CodeDog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-schedule">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/schedule/" rel="section"><i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>日程表</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-sitemap">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/sitemap.xml" rel="section"><i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>站点地图</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-commonweal">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/404/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>公益 404</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuxiaoyang1.github.io.git/2019/07/11/java基础知识总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CodeDog">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar2.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CodeDog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">java基础知识总结
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-11 16:21:46 / 修改时间：16:22:44" itemprop="dateCreated datePublished" datetime="2019-07-11T16:21:46+08:00">2019-07-11</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>date: 2019-07-10 11:08:24</p>
+<p><font color="red" size="6"> java 概述：</font><br>    &ensp;&ensp;1991 年Sun公司的James Gosling等人开始开发名称为 Oak 的语言，希望用于控制嵌入在有线电视交换盒、PDA等的微处理器；<br>1994年将Oak语言更名为Java；<br><font color="red">java的三种技术架构：</font><br>&ensp;&ensp;<font color="red">JAVAEE</font> Java Platform Enterprise Edition，开发企业环境下的应用程序，主要针对web程序开发；<br>&ensp;&ensp;<font color="red">JAVASE</font> Java Platform Standard Edition，完成桌面应用程序的开发，是其它两者的基础；<br>&ensp;&ensp;<font color="red">JAVAME</font> Java Platform Micro Edition，开发电子消费产品和嵌入式设备，如手机中的程序；</p>
+<p>1:JDK:Java Development Kit，java的开发和运行环境，java的开发工具和jre。<br>2，JRE：Java Runtime Environment，java程序的运行环境，java运行的所需的类库+JVM(java虚拟机)<br>3，配置环境变量：让java jdk\bin目录下的工具，可以在任意目录下运行，原因是，将该工具所在目录告诉了系统，当使用该工具时，由系统帮我们去找指定的目录。<br>环境变量的配置：;<font color="red">(这里写的不是很清楚，请自行百度)</font><br>   &ensp; 1）：永久配置方式：JAVA_HOME=%安装路径%\Java\jdk<br>                      path=%JAVA_HOME%\bin<br>    &ensp;2）：临时配置方式：set path=%path%;C:\Program Files\Java\jdk\bin<br>特点：系统默认先去当前路径下找要执行的程序，如果没有，再去path中设置的路径下找。<br>classpath的配置:<br>&ensp;    1）：永久配置方式：classpath=.;c:;e:<br>&ensp;    2）：临时配置方式：set classpath=.;c:;e:\</p>
+<p><strong>4,Javac命令和java命令做什么事情</strong><br>要知道java是两部分的：一部分编译，一部分运行。<br><strong>javac</strong>:负责是编译部分，当执行javac时，会启动java的编译器程序。对指定扩展名的.java文件进行编译。 生成了jvm可以识别的字节码文件。也就是class文件，也就是java的运行程序。<br><strong>java</strong>:负责运行的部分.会启动jvm.加载运行时所需的类库,并对class文件进行执行.<br>    一个文件要被执行,必须要有一个执行的起始点,这个起始点就是main函数.</p>
+<p><font color="red" size="6">java基础语法：</font><br><strong>1.关键字</strong>：其实就是某种语言赋予了特殊含义的单词。<br>    保留字：其实就是还没有赋予特殊含义，但是准备日后要使用过的单词。<br><strong>2.标示符</strong>：其实就是在程序中自定义的名词。比如类名，变量名，函数名。包含 0-9、a-z、$、_ ；<br>    注意：<br>    1）数字不可以开头。<br>    2）不可以使用关键字。<br>    <strong>3.常量</strong>：是在程序中的不会变化的数据。<br>    <strong>4.变量</strong>：其实就是内存中的一个存储空间，用于存储常量数据。<br>    &ensp;作用：方便于运算。因为有些数据不确定。所以确定该数据的名词和存储空间。<br>&ensp;特点：变量空间可以重复使用。<br>什么时候定义变量？只要是数据不确定的时候，就定义变量。<br><strong>变量的作用域和生存期:</strong><br>&emsp;&emsp;  变量的作用域：<br>  &ensp;  作用域从变量定义的位置开始，到该变量所在的那对大括号结束；<br>&emsp;&emsp; 生命周期：<br>   &ensp;   变量从定义的位置开始就在内存中活了；<br>    &ensp;  变量到达它所在的作用域的时候就在内存中消失了；<br><strong>数据类型：</strong><br><strong>1）：基本数据类型</strong>：byte、short、int、long、float、double、char、boolean<br>    <strong>2）：引用数据类型</strong>: 数组、类、接口。<br><strong>级别从低到高为</strong>：byte,char,short(这三个平级)–&gt;int–&gt;float–&gt;long–&gt;double<br><strong>自动类型转换</strong>：从低级别到高级别，系统自动转的；<br><strong>强制类型转换</strong>：什么情况下使用?把一个高级别的数赋给一个比该数的级别低的变量；</p>
+<p><strong>运算符号：</strong><br>&emsp;1）、算术运算符。<br>        &emsp;+ - * / % . &emsp;%:任何整数模2不是0就是1，所以只要改变被模数就可以实现开关运算。<br>    &emsp;    +:连接符。<br>    &emsp;    ++,–<br>    &emsp;2）、赋值运算符。<br>        =  += -= * = /= %=<br>    &emsp;3）、比较运算符。<br>        特点：该运算符的特点是：运算完的结果，要么是true，要么是false。<br>&emsp;    4）、逻辑运算符。<br>&emsp;        &amp;  |  ^  !   &amp;&amp;   ||<br>&emsp;        逻辑运算符除了 !  外都是用于连接两个boolean类型表达式。<br>    &emsp;    &amp;: 只有两边都为true结果是true。否则就是false。<br>    &emsp;    |:只要两边都为false结果是false，否则就是true<br>    &emsp;    ^:异或：和或有点不一样。<br>    &emsp;         两边结果一样，就为false。<br>        &emsp;     两边结果不一样，就为true.</p>
+<p><strong>&amp; 和 &amp;&amp;区别</strong>： &amp; ：无论左边结果是什么，右边都参与运算。<br>                      &amp;&amp;:短路与，如果左边为false，那么右边不参数与运算。<br>        <strong>| 和|| 区别</strong>：|：两边都运算。<br>                    ||：短路或，如果左边为true，那么右边不参与运算。<br>&emsp;    5）、位运算符:用于操作二进制位的运&emsp;算符。<br>    &emsp;    &amp;  |  ^<br>    &emsp;    &lt;&lt;  &gt;&gt;   &gt;&gt;&gt;(无符号右移)</p>
+<p><strong>5,语句</strong><br>If  switch  do while   while  for<br>    这些语句什么时候用？<br>    1）、当判断固定个数的值的时候，可以使用if，也可以使用switch。<br>    但是建议使用switch，效率相对较高。<br>switch(变量){<br>     case 值:要执行的语句;break;<br>     …<br>     default:要执行的语句;<br>}
+ 工作原理：用小括号中的变量的值依次和case后面的值进行对比，和哪个case后面的值相同了<br>           就执行哪个case后面的语句，如果没有相同的则执行default后面的语句；<br> 细节：<br>1）：break是可以省略的，如果省略了就一直执行到遇到break为止；<br>       2）：switch 后面的小括号中的变量应该是byte,char,short,int四种类型中的一种；<br>       3）：default可以写在switch结构中的任意位置；如果将default语句放在了第一行，则不管expression与case中的value是否匹配，程序会从default开始执行直到第一个break出现。<br>    2）、当判断数据范围，获取判断运算结果boolean类型时，需要使用if。<br>    3）、当某些语句需要执行很多次时，就用循环结构。<br>    while和for可以进行互换。<br>    区别在于：如果需要定义变量控制循环次数。建议使用for。因为for循环完毕，变量在内存中释放。</p>
+<p>break:作用于switch ，和循环语句，用于跳出，或者称为结束。<br>break语句单独存在时，下面不要定义其他语句，因为执行不到，编译会失败。当循环嵌套时，break只跳出当前所在循环。要跳出嵌套中的外部循环，只要给循环起名字即可，这个名字称之为标号。</p>
+<p>continue:只作用于循环结构，继续循环用的。<br>作用：结束本次循环，继续下次循环。该语句单独存在时，下面不可以定义语句，执行不到。</p>
+<p><strong>6，函 数</strong>：为了提高代码的复用性，可以将其定义成一个单独的功能，该功能的体现就是java中的函数。函数就是体现之一。<br><font color="red">java中的函数的定义格式：</font></p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">修饰符 返回值类型 函数名(参数类型 形式参数<span class="number">1</span>，参数类型 形式参数<span class="number">1</span>，…)&#123;</span><br><span class="line">	执行语句；</span><br><span class="line">	return 返回值；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当函数没有具体的返回值时，返回的返回值类型用void关键字表示。<br>如果函数的返回值类型是void时，return语句可以省略不写的，系统会帮你自动加上。<br>return的作用：结束函数。结束功能。<br><font color="red">函数的作用：</font><br>1）、用于定义功能。<br>2）、用于封装代码提高代码的复用性。<br>注意：函数中只能调用函数，不能定义函数。<br><font color="red">主函数：</font><br>    1）、保证该类的独立运行。<br>    2）、因为它是程序的入口。<br>    3）、因为它在被jvm调用。</p>
+<p><font color="red">重载</font>的定义是：在一个类中，如果出现了两个或者两个以上的同名函数，只要它们的参数的个数，或者参数的类型不同，即可称之为该函数重载了。<br>如何区分重载：当函数同名时，只看<strong>参数列表</strong>。和返回值类型没关系。</p>
+<p><font color="red">java分了5片内存。</font><br>1：寄存器。2：本地方法区。3：方法区。4：栈。5：堆。<br>栈：存储的都是局部变量 ( 函数中定义的变量，函数上的参数，语句中的变量 )；<br>    只要数据运算完成所在的区域结束，该数据就会被释放。<br>堆：用于存储数组和对象，也就是实体。啥是实体啊？就是用于封装多个数据的。<br>1：每一个实体都有内存首地址值。<br>2：堆内存中的变量都有默认初始化值。因为数据类型不同，值也不一样。<br>3：垃圾回收机制。</p>
+<p><font color="red" size="6"> 三：面向对象：★★★★★：</font><br><strong>匿名对象使用场景：</strong><br>1.当对象方法只进行一次调用的时候可以使用匿名对象<br>2.当对象对成员进行多次调用时，不能使用匿名对象。必须给对象起名字</p>
+<p>在类中定义其实都称之为成员。成员有两种<br><strong>1：成员变量</strong>：其实对应的就是事物的属性。<br><strong>2：成员函数</strong>：其实对应的就是事物的行为。<br>所以，其实定义类，就是在定义成员变量和成员函数。但是在定义前，必须先要对事物进行属性和行为的分析，才可以用代码来体现。</p>
+<p><em>private int age</em>;//私有的访问权限最低，只有在本类中的访问有效。<br>注意：私有仅仅是封装的一种体现形式而已</p>
+<p><strong>私有的成员：</strong>其他类不能直接创建对象访问，所以只有通过本类对外提供具体的访问方式来完成对私有的访问，可以通过对外提供函数的形式对其进行访问。（例如：get,set函数）<br><strong>好处：</strong>可以在函数中加入逻辑判断等操作，对数据进行判断等操作。<br><font color="blue">总结：开发时，记住，属性是用于存储数据的，直接被访问，容易出现安全隐患，所以，类中的属性通常被私有化，并对外提供公共的访问方法。<br>这个方法一般有两个，规范写法：对于属性 xxx，可以使用setXXX(),getXXX()对其进行操作</font></p>
+<p>类中怎么没有定义主函数呢？<br><font color="red">注意：主函数的存在，仅为该类是否需要独立运行，如果不需要，主函数是不用定义的。<br>主函数的解释：</font>保证所在类的独立运行，是程序的入口，被jvm调用。</p>
+<p><font color="red">成员变量和局部变量的区别：</font><br><strong>1：成员变量直接定义在类中。<br>   局部变量定义在方法中，参数上，语句中。<br>2：成员变量在这个类中有效。<br>局部变量只在自己所属的大括号内有效，大括号结束，局部变量失去作用域。<br>3：成员变量存在于堆内存中，随着对象的产生而存在，消失而消失。<br>局部变量存在于栈内存中，随着所属区域的运行而存在，结束而释放</strong>。</p>
+<p><font color="red">构造函数</font>：用于给对象进行初始化，是给与之对应的对象进行初始化，它具有针对性，函数中的一种。<br>特点：<br>1：该函数的名称和所在类的名称相同。<br>2：不需要定义返回值类型。<br>3：该函数没有具体的返回值。<br><font color="red">记住：所有对象创建时，都需要初始化才可以使用。</font></p>
+<p><strong>注意事项：</strong>一个类在定义时，如果没有定义过构造函数，那么该类中会自动生成一个空参数的构造函数，为了方便该类创建对象，完成初始化。如果在类中自定义了构造函数，那么默认的构造函数就没有了。</p>
+<p>一个类中，可以有多个构造函数，因为它们的函数名称都相同，所以只能通过参数列表来区分。所以，<strong>一个类中如果出现多个构造函数。它们的存在是以重载体现的。</strong></p>
+<p><font color="red">构造函数和一般函数有什么区别呢？</font><br>1：两个函数定义格式不同。<br>2：构造函数是在对象创建时，就被调用，用于初始化，而且初始化动作只执行一次。<br>    一般函数，是对象创建后，需要调用才执行，可以被调用多次。</p>
+<p><strong>什么时候使用构造函数呢？</strong><br>分析事物时，发现具体事物一出现，就具备了一些特征，那就将这些特征定义到构造函数内</p>
+<p><font color="red">构造代码块和构造函数有什么区别？</font><br>构造代码块：是给所有的对象进行初始化，也就是说，所有的对象都会调用一个代码块。只要对象一建立。就会调用这个代码块。<br>构造函数：是给与之对应的对象进行初始化。它具有针对性。</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">构造代码块格式</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">CodeBlock</span> &#123;</span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"静态代码块"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"构造代码块"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>执行顺序</strong><br>静态代码块&gt;构造代码块&gt;构造函数&gt;普通代码块　</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">CodeBlock</span> &#123;</span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"静态代码块"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"构造代码块"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CodeBlock</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"无参构造函数"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    &#123;</span><br><span class="line">         System.<span class="keyword">out</span>.println(<span class="string">"普通代码块"</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>)</span> &#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"执行了main方法"</span>);</span><br><span class="line">  		 <span class="keyword">new</span> CodeBlock().sayHello();;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"---------------"</span>);</span><br><span class="line">        <span class="keyword">new</span> CodeBlock().sayHello();;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Person p = new Person();</strong><br><font color="red">创建一个对象都在内存中做了什么事情？</font><br>1：先将硬盘上指定位置的Person.class文件加载进内存。<br>2：执行main方法时，在栈内存中开辟了main方法的空间(压栈-进栈)，然后在main方法的栈区分配了一个变量p。<br>3：在堆内存中开辟一个实体空间，分配了一个内存首地址值。new<br>4：在该实体空间中进行属性的空间分配，并进行了默认初始化。<br>5：对空间中的属性进行显示初始化。<br>6：进行实体的构造代码块初始化。<br>7：调用该实体对应的构造函数，进行构造函数初始化。（）<br>8：将首地址赋值给p ，p变量就引用了该实体。(指向了该对象)</p>
+<hr>
+<p><font color="red">封装</font>（面向对象特征之一）：是指隐藏对象的属性和实现细节，仅对外提供公共访问方式。<br>好处：<font color="blue">将变化隔离；便于使用；提高重用性；安全性。</font><br><strong>封装原则</strong>：将不需要对外提供的内容都隐藏起来，把属性都隐藏，提供公共方法对其访问。</p>
+<p><font color="blue">this:</font>代表对象。就是所在函数所属对象的引用。<br>this到底代表什么呢？<strong>哪个对象调用了this所在的函数，this就代表哪个对象，就是哪个对象的引用。</strong><br>开发时，什么时候使用this呢？<br>在定义功能时，如果该功能内部使用到了调用该功能的对象，这时就用this来表示这个对象。</p>
+<p>this 还可以用于构造函数间的调用。<br><strong>调用格式</strong>:this(实际参数)；<br>this对象后面跟上 .  调用的是成员属性和成员方法(一般方法)；<br>this对象后面跟上 () 调用的是本类中的对应参数的构造函数。</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">package methoud;</span><br><span class="line"><span class="keyword">class</span> <span class="title">Person</span>&#123;  <span class="comment">// 定义Person类</span></span><br><span class="line"> <span class="keyword">private</span> String name ;  <span class="comment">// 姓名</span></span><br><span class="line"> <span class="keyword">private</span> <span class="keyword">int</span> age ;   <span class="comment">// 年龄</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123; <span class="comment">// 无参构造  </span></span><br><span class="line">  System.<span class="keyword">out</span>.println(<span class="string">"新对象实例化"</span>) ;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="title">Person</span>(<span class="params">String name</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>() ;<span class="comment">// 调用本类中的无参构造方法</span></span><br><span class="line">  <span class="keyword">this</span>.name = name ;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="title">Person</span>(<span class="params">String name,<span class="keyword">int</span> age</span>)</span>&#123; <span class="comment">// 通过构造方法赋值</span></span><br><span class="line">  <span class="keyword">this</span>(name) ;<span class="comment">// 调用有一个参数的构造方法</span></span><br><span class="line">  <span class="keyword">this</span>.age = age ;<span class="comment">// 为类中的age属性赋值</span></span><br><span class="line"> &#125;</span><br><span class="line"> <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span>(<span class="params"></span>)</span>&#123; <span class="comment">// 取得信息的方法</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">"姓名："</span> + name + <span class="string">"，年龄："</span> + age ;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ThisDemo06</span>&#123;</span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String args[]</span>)</span>&#123;</span><br><span class="line">  Person per1 = <span class="keyword">new</span> Person(<span class="string">"张三"</span>,<span class="number">33</span>) ; <span class="comment">// 调用构造实例化对象</span></span><br><span class="line">  System.<span class="keyword">out</span>.println(per1.getInfo()) ; <span class="comment">// 取得信息</span></span><br><span class="line"> &#125;</span><br><span class="line">&#125;;</span><br><span class="line">运行结果</span><br><span class="line">新对象实例化</span><br><span class="line">姓名：张三，年龄：<span class="number">33</span></span><br></pre></td></tr></table></figure>
+
+<p><font color="red">注意：用this调用构造函数，必须定义在构造函数的第一行。因为构造函数是用于初始化的，所以初始化动作一定要执行。</font>否则编译失败。</p>
+<p><font color="red">static：★★★ 关键字</font>，是一个修饰符，用于修饰成员(成员变量和成员函数)。<br><strong>特点：</strong><br>想要实现对象中的共性数据的对象共享。可以将这个数据进行静态修饰。<br>2，被静态修饰的成员，可以直接被类名所调用。也就是说，静态的成员多了一种调用方式。类名.静态方式。<br>3，静态随着类的加载而加载。而且优先于对象存在。<br><strong>弊端：</strong><br>1，有些数据是对象特有的数据，是不可以被静态修饰的。因为那样的话，特有数据会变成对象的共享数据。这样对事物的描述就出了问题。所以，在定义静态时，必须要明确，这个数据是否是被对象所共享的。<br>2，<strong>静态方法只能访问静态成员，不可以访问非静态成员</strong>。
+因为静态方法加载时，优先于对象存在，所以没有办法访问对象中的成员。<br>3，<strong>静态方法中不能使用this，super关键字</strong>。
+因为this代表对象，而静态在时，有可能没有对象，所以this无法使用。<br>4，主函数是静态的。<br><font color="red">什么时候定义静态成员呢？</font>或者说：定义成员时，到底需不需要被静态修饰呢？<br>成员分两种：<br><strong>1，成员变量</strong>。（数据共享时静态化）<br>该成员变量的数据是否是所有对象都一样：<br>如果是，那么该变量需要被静态修饰，因为是共享的数据。<br>如果不是，那么就说这是对象的特有数据，要存储到对象中。<br><strong>2，成员函数。</strong>（方法中没有调用特有数据时就定义成静态）<br>    如果判断成员函数是否需要被静态修饰呢？<br>    只要参考，该函数内是否访问了对象中的特有数据：<br>    如果有访问特有数据，那方法不能被静态修饰。<br>    如果没有访问过特有数据，那么这个方法需要被静态修饰。</p>
+<p><font color="red">成员变量和静态变量的区别：</font><br>1，成员变量所属于对象。所以也称为实例变量。<br>静态变量所属于类。所以也称为类变量。<br>2，成员变量存在于堆内存中。<br>静态变量存在于方法区中。<br>3，成员变量随着对象创建而存在。随着对象被回收而消失。<br>静态变量随着类的加载而存在。随着类的消失而消失。<br>4，成员变量只能被对象所调用 。<br>静态变量可以被对象调用，也可以被类名调用。<br>所以，成员变量可以称为对象的特有数据，静态变量称为对象的共享数据。</p>
+<p> <strong>Public</strong>访问权限最大。<br><strong>static</strong>不需要对象，直接类名即可。<br><strong>void</strong>主函数没有返回值。<br><strong>Main</strong>主函数特定的名称。<br><strong>(String[] args)</strong>主函数的参数，是一个字符串数组类型的参数，jvm调用main方法时，传递的实际参数是 new String[0]。</p>
+<p><font color="red">设计模式</font>：解决问题最行之有效的思想。是一套被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结。使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性。<br>java中有23种设计模式：</p>
+<p><font color="red">单例设计模式：★★★★★</font><br>解决的问题：<strong>保证一个类在内存中的对象唯一性</strong>。
+比如：多程序读取一个配置文件时，建议配置文件封装成对象。会方便操作其中数据，又要保证多个程序读到的是同一个配置文件对象，就需要该配置文件对象在内存中是唯一的。</p>
+<p><font color="red">Runtime()方法就是单例设计模式进行设计的。</font></p>
+<p><font color="red">如何保证对象唯一性呢？</font><br>思想：<br>1，不让其他程序创建该类对象。<br>2，在本类中创建一个本类对象。<br>3，对外提供方法，让其他程序获取这个对象。</p>
+<p>步骤：<br>1，因为创建对象都需要构造函数初始化，只要将本类中的构造函数私有化，其他程序就无法再创建该类对象；<br>2，就在类中创建一个本类的对象；<br>3，定义一个方法，返回该对象，让其他程序可以通过方法就得到本类对象。（作用：可控）</p>
+<p>代码体现：<br>1，私有化构造函数；<br>2，创建私有并静态的本类对象；<br>定义公有并静态的方法，返回该对象。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//饿汉式</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Single</span>&#123;</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">Single</span><span class="params">()</span></span>&#123;&#125; <span class="comment">//私有化构造函数。</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> Single s = <span class="keyword">new</span> Single(); <span class="comment">//创建私有并静态的本类对象。</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Single <span class="title">getInstance</span><span class="params">()</span></span>&#123; <span class="comment">//定义公有并静态的方法，返回该对象。</span></span><br><span class="line">		<span class="keyword">return</span> s;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">``` java</span><br><span class="line"><span class="comment">//懒汉式:延迟加载方式。</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Single2</span>&#123;</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">Single2</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> Single2 s = null;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Single2 <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(s==null)</span><br><span class="line">			s = <span class="keyword">new</span> Single2();</span><br><span class="line">		<span class="keyword">return</span> s;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><font color="red">继 承（面向对象特征之一）</font><br><strong>好处：<br>1：提高了代码的复用性。<br>2：让类与类之间产生了关系，提供了另一个特征多态的前提。</strong></p>
+<p>父类的由来：其实是由多个类不断向上抽取共性内容而来的。<br>java中对于继承，java只支持单继承。java虽然不直接支持多继承，但是保留了这种多继承机制，进行改良。</p>
+<p>单继承：一个类只能有一个父类。<br>多继承：一个类可以有多个父类。</p>
+<p><strong>为什么不支持多继承呢？</strong><br>因为当一个类同时继承两个父类时，两个父类中有相同的功能，那么子类对象调用该功能时，运行哪一个呢？因为父类中的方法中存在方法体。<br>但是java支持多重继承。A继承B  B继承C  C继承D。<br>多重继承的出现，就有了继承体系。体系中的顶层父类是通过不断向上抽取而来的。它里面定义的该体系最基本最共性内容的功能。<br>所以，一个体系要想被使用，直接查阅该系统中的父类的功能即可知道该体系的基本用法。那么想要使用一个体系时，需要建立对象。建议建立最子类对象，因为最子类不仅可以使用父类中的功能。还可以使用子类特有的一些功能。<br>&nbsp;<font color="red">简单说：对于一个继承体系的使用，查阅顶层父类中的内容，创建最底层子类的对象。</font></p>
+<p>子父类出现后，类中的成员都有了哪些特点：<br><strong>1：成员变量。</strong><br>     当子父类中出现一样的属性时，子类类型的对象，调用该属性，值是子类的属性值。<br>     如果想要调用父类中的属性值，需要使用一个关键字：super<br>     <strong>This：</strong>代表是本类类型的对象引用。<br>     <strong>Super：</strong>代表是子类所属的父类中的内存空间引用。<br>     注意：子父类中通常是不会出现同名成员变量的，因为父类中只要定义了，子类就不用在定义了，直接继承过来用就可以了。<br><strong>2：成员函数</strong>。
+当子父类中出现了一模一样的方法时，建立子类对象会运行子类中的方法。好像父类中的方法被覆盖掉一样。所以这种情况，是函数的另一个特性：覆盖(复写，重写)<br>什么时候使用覆盖呢？当一个类的功能内容需要修改时，可以通过覆盖来实现。<br><strong>3：构造函数。</strong><br>发现子类构造函数运行时，先运行了父类的构造函数。为什么呢?原因：<br><font color="red">子类的所有构造函数中的第一行，其实都有一条隐身的语句super();</font><br><strong>super():</strong> 表示父类的构造函数，并会调用于参数相对应的父类中的构造函数。而super():是在调用父类中空参数的构造函数。<br>为什么子类对象初始化时，都需要调用父类中的函数？(为什么要在子类构造函数的第一行加入这个super()?)<br>因为子类继承父类，会继承到父类中的数据，所以必须要看父类是如何对自己的数据进行初始化的。所以子类在进行对象初始化时，先调用父类的构造函数，这就是子类的实例化过程。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center;">
+  <img id="wechat_subscriber_qcode" src="http://i2.tiimg.com/692559/64400ebfd4767b83.jpg" alt="CodeDog wechat" style="width: 200px; max-width: 100%;">
+  <div>扫一扫上面二维码关注我的公众号</div>
+</div>
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div id="reward-container">
+  <div></div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="http://i2.tiimg.com/692559/8ca64904bbfc53d1.png" alt="CodeDog 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="http://i2.tiimg.com/692559/9a57d142a61c6ee2.png" alt="CodeDog 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java基础知识/" rel="tag"># java基础知识</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/11/test/" rel="next" title="MarkDown的基本使用">
+                <i class="fa fa-chevron-left"></i> MarkDown的基本使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NTA2Ny8yMTU4NA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar2.png" alt="CodeDog">
+            
+              <p class="site-author-name" itemprop="name">CodeDog</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/liuxiaoyang" title="GitHub &rarr; https://github.com/liuxiaoyang" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:boxueemal@yeah.net" title="E-Mail &rarr; mailto:boxueemal@yeah.net" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://liuxiaoyang1.github.io" title="https://liuxiaoyang1.github.io" rel="noopener" target="_blank">CodeDog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.bilibili.com" title="https://www.bilibili.com" rel="noopener" target="_blank">bilibili</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CodeDog</span>
+
+  
+
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.2</div>
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script id="ribbon" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.2"></script>
+
+  <script src="/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.2"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.2"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: '2019/07/11/java基础知识总结/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
