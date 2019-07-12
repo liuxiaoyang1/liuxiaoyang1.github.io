@@ -114,10 +114,12 @@
 <meta property="og:site_name" content="CodeDog">
 <meta property="og:description" content="date: 2019-07-10 11:08:24  java 概述：    &amp;ensp;&amp;ensp;1991 年Sun公司的James Gosling等人开始开发名称为 Oak 的语言，希望用于控制嵌入在有线电视交换盒、PDA等的微处理器；1994年将Oak语言更名为Java；java的三种技术架构：&amp;ensp;&amp;ensp;JAVAEE Java Platform Enterprise Edit">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-12T03:20:25.898Z">
+<meta property="og:image" content="http://i1.fuimg.com/692559/2127a1cb663704c3.png">
+<meta property="og:updated_time" content="2019-07-12T04:10:41.785Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java基础知识总结">
 <meta name="twitter:description" content="date: 2019-07-10 11:08:24  java 概述：    &amp;ensp;&amp;ensp;1991 年Sun公司的James Gosling等人开始开发名称为 Oak 的语言，希望用于控制嵌入在有线电视交换盒、PDA等的微处理器；1994年将Oak语言更名为Java；java的三种技术架构：&amp;ensp;&amp;ensp;JAVAEE Java Platform Enterprise Edit">
+<meta name="twitter:image" content="http://i1.fuimg.com/692559/2127a1cb663704c3.png">
 
 
 
@@ -429,7 +431,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-12 11:20:25" itemprop="dateModified" datetime="2019-07-12T11:20:25+08:00">2019-07-12</time>
+                <time title="修改时间：2019-07-12 12:10:41" itemprop="dateModified" datetime="2019-07-12T12:10:41+08:00">2019-07-12</time>
               
             
           </span>
@@ -595,9 +597,37 @@
 <p>总结java中的四种权限：<br>    范围            public        protected        default        private<br>同一个类中       ok                ok                     ok            ok<br>同一包中          ok                  ok                     ok<br>子类                    ok<br>不同包中         ok</p>
 <p>导入指定包中的类。记住：实际开发时,到的哪个类就导入哪个类，不建议使用<em>.
 import packa.</em> ; 这个仅仅是导入了packa当前目录下的所有的类。不包含子包。<br>import packa.abc. * ; //导入了packa包中的子包abc下的当前的所有类。</p>
-<p><font color="red" size="6">多线程：★★★★</font><br><font color="red" size="6">同步：★★★★★</font></p>
-<p><font color="red" size="6">集合框架：★★★★★</font></p>
-<p><font color="red" size="6">IO流：★★★★★</font></p>
+<p><font color="red" size="6">多线程：★★★★</font><br><strong>进程</strong>：正在进行中的程序。其实进程就是一个应用程序运行时的内存分配空间。<br><strong>线程</strong>：其实就是进程中一个程序执行控制单元，一条执行路径。进程负责的是应用程序的空间的标示。线程负责的是应用程序的执行顺序。</p>
+<p>一个进程至少有一个线程在运行，当一个进程中出现多个线程时，就称这个应用程序是多线程应用程序，每个线程在栈区中都有自己的执行空间，自己的方法区、自己的变量。<br>jvm在启动的时，首先有一个主线程，负责程序的执行，调用的是main函数。主线程执行的代码都在main方法中。<br>当产生垃圾时，收垃圾的动作，是不需要主线程来完成，因为这样，会出现主线程中的代码执行会停止，会去运行垃圾回收器代码，效率较低，所以由单独一个线程来负责垃圾回收。 </p>
+<p> <strong>随机性的原理</strong>：因为cpu的快速切换造成，哪个线程获取到了cpu的执行权，哪个线程就执行。</p>
+<p> 返回当前线程的名称：Thread.currentThread().getName()<br>线程的名称是由：Thread-编号定义的。编号从0开始。<br>线程要运行的代码都统一存放在了run方法中。</p>
+<p>线程要运行必须要通过类中指定的方法开启。start方法。（启动后，就多了一条执行路径）<br>start方法：1）、启动了线程；2）、让jvm调用了run方法。</p>
+<p><strong>创建线程的第一种方式</strong>：继承Thread ，由子类复写run方法。<br>步骤：<br>1，定义类继承Thread类；<br>2，目的是复写run方法，将要让线程运行的代码都存储到run方法中；<br>3，通过创建Thread类的子类对象，创建线程对象；<br>4，调用线程的start方法，开启线程，并执行run方法。</p>
+<p>线程状态：<br>被创建：start()<br>运行：具备执行资格，同时具备执行权；<br>冻结：sleep(time),wait()—notify()唤醒；线程释放了执行权，同时释放执行资格；<br>临时阻塞状态：线程具备cpu的执行资格，没有cpu的执行权；<br>消亡：stop()</p>
+<p><strong>创建线程的第二种方式</strong>：实现一个接口Runnable。<br>步骤：<br>1，定义类实现Runnable接口。<br>2，覆盖接口中的run方法（用于封装线程要运行的代码）。<br>3，通过Thread类创建线程对象；<br>4，将实现了Runnable接口的子类对象作为实际参数传递给Thread类中的构造函数。<br>为什么要传递呢？因为要让线程对象明确要运行的run方法所属的对象。<br>5，调用Thread对象的start方法。开启线程，并运行Runnable接口子类中的run方法。<br>Ticket t = new Ticket();<br>        /*
+        直接创建Ticket对象，并不是创建线程对象。<br>        因为创建对象只能通过new Thread类，或者new Thread类的子类才可以。<br>        所以最终想要创建线程。既然没有了Thread类的子类，就只能用Thread类。<br>        <em>/
+        Thread t1 = new Thread(t); //创建线程。<br>        /</em><br>        只要将t作为Thread类的构造函数的实际参数传入即可完成线程对象和t之间的关联<br>        为什么要将t传给Thread类的构造函数呢？其实就是为了明确线程要运行的代码run方法。<br>        */<br>        t1.start();</p>
+<p>解决安全问题的原理：<br>只要将操作共享数据的语句在某一时段让一个线程执行完，在执行过程中，其他线程不能进来执行就可以解决这个问题。</p>
+<p>如何进行多句操作共享数据代码的封装呢？<br>java中提供了一个解决方式：就是同步代码块。<br>格式：<br>synchronized(对象) {  // 任意对象都可以。这个对象就是锁。<br>    需要被同步的代码；<br>}</p>
+<p><font color="red" size="6">同步：★★★★★</font><br><font color="red">好处：</font>解决了线程安全问题。<br><font color="red">弊端：</font>相对降低性能，因为判断锁需要消耗资源，<font color="red">产生了死锁。</font><br>定义同步是有前提的：<br>1，必须要有两个或者两个以上的线程，才需要同步。<br>2，多个线程必须保证使用的是同一个锁。</p>
+<p><font color="red">同步的第二种表现形式：</font><br>同步函数：其实就是将同步关键字定义在函数上，让函数具备了同步性。</p>
+<p><font color="red">同步函数是用的哪个锁呢？</font><br>通过验证，函数都有自己所属的对象this，所以同步函数所使用的锁就是this锁。</p>
+<p><font color="red">同步代码块和同步函数的区别？</font><br>同步代码块使用的锁可以是任意对象。<br>同步函数使用的锁是this，静态同步函数的锁是该类的字节码文件对象。</p>
+<p>在一个类中只有一个同步，可以使用同步函数。如果有多同步，必须使用同步代码块，来确定不同的锁。所以同步代码块相对灵活一些。</p>
+<p><font color="red">同步死锁：</font>通常只要将同步进行嵌套，就可以看到现象。同步函数中有同步代码块，同步代码块中还有同步函数。</p>
+<p><font color="red">线程间通信：</font>思路：多个线程在操作同一个资源，但是操作的动作却不一样。<br>1：将资源封装成对象。<br>2：将线程执行的任务(任务其实就是run方法。)也封装成对象。</p>
+<p><font color="red">等待唤醒机制：涉及的方法：</font><br>wait:将同步中的线程处于冻结状态。释放了执行权，释放了资格。同时将线程对象存储到线程池中。<br>notify：唤醒线程池中某一个等待线程。<br>notifyAll:唤醒的是线程池中的所有线程。</p>
+<p><font color="red">wait和sleep区别：</font> 分析这两个方法：从执行权和锁上来分析：<br>wait：可以指定时间也可以不指定时间。不指定时间，只能由对应的notify或者notifyAll来唤醒。<br>sleep：必须指定时间，时间到自动从冻结状态转成运行状态(临时阻塞状态)。<br>wait：线程会释放执行权，而且线程会释放锁。<br>Sleep：线程会释放执行权，但是不释放锁。</p>
+<p> <font color="red" size="6">String字符串：★★★☆</font>(未完成)<br>   <font color="red" size="6">StringBuffer字符串缓冲区：★★★☆</font>(未完成)</p>
+<p><font color="red" size="6">集合框架：★★★★★</font>，用于存储数据的容器。<br><strong>特点：</strong><br>1：对象封装数据，对象多了也需要存储。集合用于存储对象。<br>2：对象的个数确定可以使用数组，但是不确定怎么办？可以用集合。因为集合是可变长度的。</p>
+<p><font color="red">集合和数组的区别：</font><br>1：数组是固定长度的；集合可变长度的。<br>2：数组可以存储基本数据类型，也可以存储引用数据类型；集合只能存储引用数据类型。<br>3：数组存储的元素必须是同一个数据类型；集合存储的对象可以是不同数据类型。</p>
+<p><font color="red">数据结构：</font>就是容器中存储数据的方式。</p>
+<p>对于集合容器，有很多种。因为每一个容器的自身特点不同，其实原理在于每个容器的内部数据结构不同。<br>集合容器在不断向上抽取过程中。出现了集合体系。<br><strong>在使用一个体系时，原则：参阅顶层内容。建立底层对象。</strong><br><img src="http://i1.fuimg.com/692559/2127a1cb663704c3.png" alt="enter description here"></p>
+<hr>
+<p><font color="red">–&lt; java.util &gt;– Collection接口：</font><br>Collection：<br>    |–List：有序(元素存入集合的顺序和取出的顺序一致)，元素都有索引。元素可以重复。<br>    |–Set：无序(存入和取出顺序有可能不一致)，不可以存储重复元素。必须保证元素唯一性。</p>
+<p><strong>1，添加：</strong><br>    add(object)：添加一个元素<br>    addAll(Collection) ：添加一个集合中的所有元素。<br><strong>2，删除：</strong><br>    clear()：将集合中的元素全删除，清空集合。<br>    remove(obj) ：删除集合中指定的对象。注意：删除成功，集合的长度会改变。<br>    removeAll(collection) ：删除部分元素。部分元素和传入Collection一致。<br><strong>3，判断：</strong><br>    boolean contains(obj) ：集合中是否包含指定元素 。<br>    boolean containsAll(Collection) ：集合中是否包含指定的多个元素。<br>    boolean isEmpty()：集合中是否有元素。<br><strong>4，获取：</strong><br>    int size()：集合中有几个元素。<br><strong>5，取交集</strong>：
+    boolean  retainAll(Collection) ：对当前集合中保留和指定集合中的相同的元素。如果两个集合元素相同，返回flase；如果retainAll修改了当前集合，返回true。<br><strong>6，获取集合中所有元素：</strong><br>    Iterator  iterator()：迭代器<br><strong>7，将集合变成数组：</strong><br>    toArray();</p>
+<p><font color="red" size="6">IO流：★★★★★</font>(未完成)</p>
 
       
     </div>
