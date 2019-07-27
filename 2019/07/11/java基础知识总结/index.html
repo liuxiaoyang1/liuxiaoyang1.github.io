@@ -115,7 +115,7 @@
 <meta property="og:description" content="date: 2019-07-10 11:08:24  java 概述：    &amp;ensp;&amp;ensp;1991 年Sun公司的James Gosling等人开始开发名称为 Oak 的语言，希望用于控制嵌入在有线电视交换盒、PDA等的微处理器；1994年将Oak语言更名为Java；java的三种技术架构：&amp;ensp;&amp;ensp;JAVAEE Java Platform Enterprise Edit">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://i1.fuimg.com/692559/2127a1cb663704c3.png">
-<meta property="og:updated_time" content="2019-07-12T04:10:41.785Z">
+<meta property="og:updated_time" content="2019-07-13T04:45:48.486Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java基础知识总结">
 <meta name="twitter:description" content="date: 2019-07-10 11:08:24  java 概述：    &amp;ensp;&amp;ensp;1991 年Sun公司的James Gosling等人开始开发名称为 Oak 的语言，希望用于控制嵌入在有线电视交换盒、PDA等的微处理器；1994年将Oak语言更名为Java；java的三种技术架构：&amp;ensp;&amp;ensp;JAVAEE Java Platform Enterprise Edit">
@@ -431,7 +431,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-12 12:10:41" itemprop="dateModified" datetime="2019-07-12T12:10:41+08:00">2019-07-12</time>
+                <time title="修改时间：2019-07-13 12:45:48" itemprop="dateModified" datetime="2019-07-13T12:45:48+08:00">2019-07-13</time>
               
             
           </span>
@@ -627,6 +627,27 @@ import packa.</em> ; 这个仅仅是导入了packa当前目录下的所有的类
 <p><font color="red">–&lt; java.util &gt;– Collection接口：</font><br>Collection：<br>    |–List：有序(元素存入集合的顺序和取出的顺序一致)，元素都有索引。元素可以重复。<br>    |–Set：无序(存入和取出顺序有可能不一致)，不可以存储重复元素。必须保证元素唯一性。</p>
 <p><strong>1，添加：</strong><br>    add(object)：添加一个元素<br>    addAll(Collection) ：添加一个集合中的所有元素。<br><strong>2，删除：</strong><br>    clear()：将集合中的元素全删除，清空集合。<br>    remove(obj) ：删除集合中指定的对象。注意：删除成功，集合的长度会改变。<br>    removeAll(collection) ：删除部分元素。部分元素和传入Collection一致。<br><strong>3，判断：</strong><br>    boolean contains(obj) ：集合中是否包含指定元素 。<br>    boolean containsAll(Collection) ：集合中是否包含指定的多个元素。<br>    boolean isEmpty()：集合中是否有元素。<br><strong>4，获取：</strong><br>    int size()：集合中有几个元素。<br><strong>5，取交集</strong>：
     boolean  retainAll(Collection) ：对当前集合中保留和指定集合中的相同的元素。如果两个集合元素相同，返回flase；如果retainAll修改了当前集合，返回true。<br><strong>6，获取集合中所有元素：</strong><br>    Iterator  iterator()：迭代器<br><strong>7，将集合变成数组：</strong><br>    toArray();</p>
+<p><font color="red">-&lt; java.util &gt;– Iterator接口：</font><br>迭代器：是一个接口。作用：用于取集合中的元素。</p>
+<table>
+<thead>
+<tr>
+<th>hasNext() 如果仍然有元素可以迭代，则返回true</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>next()   返回迭代的下一个元素</td>
+</tr>
+<tr>
+<td>remove()  从迭代器指向的 collection 中移除迭代器返回的最后一个元素（可选操作）</td>
+</tr>
+</tbody></table>
+<p>每一个集合都有自己的数据结构，都有特定的取出自己内部元素的方式。为了便于操作所有的容器，取出元素。将容器内部的取出方式按照一个统一的规则向外提供，这个规则就是Iterator接口。<br>也就说，只要通过该接口就可以取出Collection集合中的元素，至于每一个具体的容器依据自己的数据结构，如何实现的具体取出细节，这个不用关心，这样就降低了取出元素和具体集合的耦合性。</p>
+<p>Iterator it = coll.iterator();//获取容器中的迭代器对象，至于这个对象是是什么不重要。这对象肯定符合一个规则Iterator接口。</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>)</span> &#123;</span><br><span class="line">	Collection coll = <span class="keyword">new</span> ArrayList();</span><br><span class="line">	coll.<span class="keyword">add</span>(<span class="string">"abc0"</span>);</span><br><span class="line">	coll.<span class="keyword">add</span>(<span class="string">"abc1"</span>);</span><br><span class="line">	coll.<span class="keyword">add</span>(<span class="string">"abc2"</span>);</span><br><span class="line">	<span class="comment">//--------------方式1----------------------</span></span><br><span class="line">	Iterator it = coll.iterator();</span><br><span class="line">	<span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">		System.<span class="keyword">out</span>.println(it.next());</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//---------------方式2用此种----------------------</span></span><br><span class="line">	<span class="keyword">for</span>(Iterator it = coll.iterator();it.hasNext(); )&#123;</span><br><span class="line">		System.<span class="keyword">out</span>.println(it.next());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><font color="red">–&lt; java.util &gt;– List接口：</font><br>List本身是Collection接口的子接口，具备了Collection的所有方法。现在学习List体系特有的共性方法，查阅方法发现List的特有方法都有索引，这是该集合最大的特点。</p>
+<p>List：有序(元素存入集合的顺序和取出的顺序一致)，元素都有索引。元素可以重复。<br>    |–ArrayList：底层的数据结构是数组,线程不同步，ArrayList替代了Vector，查询元素的速度非常快。<br>    |–LinkedList：底层的数据结构是链表，线程不同步，增删元素的速度非常快。<br>    |–Vector：底层的数据结构就是数组，线程同步的，Vector无论查询和增删都巨慢。</p>
+<p>1，添加：<br>    add(index,element) ：在指定的索引位插入元素。<br>    addAll(index,collection) ：在指定的索引位插入一堆元素。<br>2，删除：<br>    remove(index) ：删除指定索引位的元素。 返回被删的元素。<br>3，获取：<br>    Object get(index) ：通过索引获取指定元素。<br>    int indexOf(obj) ：获取指定元素第一次出现的索引位，如果该元素不存在返回-1；<br>                      所以，通过-1，可以判断一个元素是否存在。<br>    int lastIndexOf(Object o) ：反向索引指定元素的位置。<br>    List subList(start,end) ：获取子列表。<br>4，修改：<br>    Object set(index,element) ：对指定索引位进行元素的修改。<br>5，获取所有元素：<br>    ListIterator listIterator()：list集合特有的迭代器。</p>
 <p><font color="red" size="6">IO流：★★★★★</font>(未完成)</p>
 
       
@@ -713,6 +734,10 @@ import packa.</em> ; 这个仅仅是导入了packa当前目录下的所有的类
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/07/27/html-css简单记录/" rel="prev" title="html&css简单记录">
+                html&css简单记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -778,7 +803,7 @@ import packa.</em> ; 这个仅仅是导入了packa当前目录下的所有的类
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -799,7 +824,9 @@ import packa.</em> ; 这个仅仅是导入了packa当前目录下的所有的类
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -820,7 +847,9 @@ import packa.</em> ; 这个仅仅是导入了packa当前目录下的所有的类
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
