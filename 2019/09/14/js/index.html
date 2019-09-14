@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="CodeDog">
 <meta property="og:description" content="单选按钮：运用三木运算符 1234567891011121314151617&amp;lt;input type=&quot;radio&quot; name=&quot;sex&quot; id=&quot;man&quot; checked&amp;gt;男&amp;lt;input type=&quot;radio&quot; name=&quot;sex&quot;&amp;gt;女&amp;lt;button id=&quot;btn&quot;&amp;gt;获取性别&amp;lt;/button&amp;gt;&amp;lt;p id=&quot;title&quot;&amp;gt;当前选择的性别">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-14T12:13:15.796Z">
+<meta property="og:updated_time" content="2019-09-14T12:34:41.707Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js常用知识点">
 <meta name="twitter:description" content="单选按钮：运用三木运算符 1234567891011121314151617&amp;lt;input type=&quot;radio&quot; name=&quot;sex&quot; id=&quot;man&quot; checked&amp;gt;男&amp;lt;input type=&quot;radio&quot; name=&quot;sex&quot;&amp;gt;女&amp;lt;button id=&quot;btn&quot;&amp;gt;获取性别&amp;lt;/button&amp;gt;&amp;lt;p id=&quot;title&quot;&amp;gt;当前选择的性别">
@@ -404,7 +404,7 @@
                 
               
 
-              <time title="创建时间：2019-09-14 19:47:07 / 修改时间：20:13:15" itemprop="dateCreated datePublished" datetime="2019-09-14T19:47:07+08:00">2019-09-14</time>
+              <time title="创建时间：2019-09-14 19:47:07 / 修改时间：20:34:41" itemprop="dateCreated datePublished" datetime="2019-09-14T19:47:07+08:00">2019-09-14</time>
             
 
             
@@ -492,6 +492,13 @@
 <p><strong>数组常用的方法：</strong></p>
 <p>push():逐个加到数组末尾，返回数组长度<br>pop()：末尾删除，减少了数组长度，返回移除项<br>unshift(),shift()在开头添加删除，同理上<br>splice()移除当前数组的一部分<br>sort()数组排序<br>map()返回一个新的数组</p>
 <p><strong>字符串常用方法</strong><br>charAt(下标)：返回数组下标字符串<br>indexof()从左向右查找首次出现的位置，找不到返回-1<br>seach()从左向右查找首次出现的位置，找不到返回-1<br>lastindexof从右向左<br>截取<br>substring()<br>slice()<br>大小写<br>toLowercase() toupercase()<br>分割split()<br>替换 replace()</p>
+<p><strong>DOM操作</strong><br>1获取子节点：父节点.children;非标准，返回元素集合<br>                        父节点.childNodes标准 返回包括文本元素<br>2节点属性：标签1 属性2 文本3   nodetype判断<br>                    nadeName 标签节点名<br>                    nadeValue 文本节点内容，不是别标签节点<br>3获取父节点：元素.parentNode;<br>4其他元素：父元素首尾：父元素.firstchilde  标准会解析换行 （ie不会）<br>                                        父元素.firstElementchild:标准<br>                元素下一个节点：<br>                nextSibling，nestElementsiblin<br>                元素上一个节点<br>                preriousslibing,preiousElementslibing<br>操作节点：<br>creatElement()创建节点<br>appendchild()父元素末尾加节点<br>remove()移除自生<br>removechild(元素):</p>
+<p><strong>BOM</strong><br>alter();弹窗<br>comfirm()对话框<br>print()打印<br>位置：<br>client:元素大小，元素可视宽高：元素.clientWidth/Height<br>        元素。clientTop/left<br>offset<br>元素位置offsetwidth/Height<br>offsetTop/Left——&gt;到定位父元素位置，父元素未定位，到body<br>scroll：<br>滚动距离</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onscroll=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="built_in">document</span>.documentElement.scrollTOP||<span class="built_in">document</span>.body.scrollTop</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>获取表格元素</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oTab = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"table"</span>)[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">   <span class="built_in">console</span>.log(oTab.tHead); <span class="comment">//获取thead</span></span><br><span class="line">   <span class="built_in">console</span>.log(oTab.tFoot); <span class="comment">//获取tfoot</span></span><br><span class="line">   <span class="built_in">console</span>.log(oTab.tBodies[<span class="number">0</span>]); <span class="comment">//获取tbody</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="comment">//行</span></span><br><span class="line">   <span class="built_in">console</span>.log(oTab.rows); <span class="comment">//HTMLCollection(4) [tr, tr, tr, tr]</span></span><br><span class="line">   <span class="built_in">console</span>.log(oTab.tBodies[<span class="number">0</span>].rows); <span class="comment">//tbody中的行</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">//单元格:必须通过行获取</span></span><br><span class="line">   <span class="built_in">console</span>.log(oTab.rows[<span class="number">0</span>].cells);</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -663,8 +670,6 @@
                     
                       
                     
-                      
-                    
                     <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
@@ -681,10 +686,6 @@
                     
                   
                     
-                    
-                      
-                    
-                      
                     
                       
                     
