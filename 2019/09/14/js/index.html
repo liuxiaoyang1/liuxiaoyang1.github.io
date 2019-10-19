@@ -99,14 +99,14 @@
 
 
   <meta name="description" content="单选按钮：运用三木运算符 1234567891011121314151617&amp;lt;input type=&quot;radio&quot; name=&quot;sex&quot; id=&quot;man&quot; checked&amp;gt;男&amp;lt;input type=&quot;radio&quot; name=&quot;sex&quot;&amp;gt;女&amp;lt;button id=&quot;btn&quot;&amp;gt;获取性别&amp;lt;/button&amp;gt;&amp;lt;p id=&quot;title&quot;&amp;gt;当前选择的性别">
-<meta name="keywords" content="web">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js常用知识点">
 <meta property="og:url" content="https://liuxiaoyang1.github.io.git/2019/09/14/js/index.html">
 <meta property="og:site_name" content="CodeDog">
 <meta property="og:description" content="单选按钮：运用三木运算符 1234567891011121314151617&amp;lt;input type=&quot;radio&quot; name=&quot;sex&quot; id=&quot;man&quot; checked&amp;gt;男&amp;lt;input type=&quot;radio&quot; name=&quot;sex&quot;&amp;gt;女&amp;lt;button id=&quot;btn&quot;&amp;gt;获取性别&amp;lt;/button&amp;gt;&amp;lt;p id=&quot;title&quot;&amp;gt;当前选择的性别">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-07T12:39:02.166Z">
+<meta property="og:updated_time" content="2019-10-19T01:18:30.384Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js常用知识点">
 <meta name="twitter:description" content="单选按钮：运用三木运算符 1234567891011121314151617&amp;lt;input type=&quot;radio&quot; name=&quot;sex&quot; id=&quot;man&quot; checked&amp;gt;男&amp;lt;input type=&quot;radio&quot; name=&quot;sex&quot;&amp;gt;女&amp;lt;button id=&quot;btn&quot;&amp;gt;获取性别&amp;lt;/button&amp;gt;&amp;lt;p id=&quot;title&quot;&amp;gt;当前选择的性别">
@@ -421,7 +421,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-10-07 20:39:02" itemprop="dateModified" datetime="2019-10-07T20:39:02+08:00">2019-10-07</time>
+                <time title="修改时间：2019-10-19 09:18:30" itemprop="dateModified" datetime="2019-10-19T09:18:30+08:00">2019-10-19</time>
               
             
           </span>
@@ -438,7 +438,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/web/" itemprop="url" rel="index"><span itemprop="name">web</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a></span>
 
                 
                 
@@ -511,8 +511,6 @@
 <p><strong>获取表格元素</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oTab = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"table"</span>)[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">   <span class="built_in">console</span>.log(oTab.tHead); <span class="comment">//获取thead</span></span><br><span class="line">   <span class="built_in">console</span>.log(oTab.tFoot); <span class="comment">//获取tfoot</span></span><br><span class="line">   <span class="built_in">console</span>.log(oTab.tBodies[<span class="number">0</span>]); <span class="comment">//获取tbody</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="comment">//行</span></span><br><span class="line">   <span class="built_in">console</span>.log(oTab.rows); <span class="comment">//HTMLCollection(4) [tr, tr, tr, tr]</span></span><br><span class="line">   <span class="built_in">console</span>.log(oTab.tBodies[<span class="number">0</span>].rows); <span class="comment">//tbody中的行</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">//单元格:必须通过行获取</span></span><br><span class="line">   <span class="built_in">console</span>.log(oTab.rows[<span class="number">0</span>].cells);</span><br></pre></td></tr></table></figure>
 
-<p><strong>BOM</strong><br>alter()  弹窗<br>comfirm() 带有取消确定的弹窗<br>print() 打印<br>位置：<br>client:元素大小(width+padding)：元素.clientWidth/Height<br>                document.documentElement.clientWidth/Heitht(屏幕的可视宽高)<br>            元素.clientTop/left<br>offset：占位宽高（width+padding+border）ffsetWidth/Height<br>                        元素位置：        offsetTop/Left  父元素有定位，到父元素距离，没有定位到body的距离<br>scroll:滚动距离：window.onscroll（）{<br>        document.documentElement.scrollTop||document.body.scrollTop;//获取页面被被卷曲高度<br>}                                
-==总结：offset获取元素位置<br>            client：获取元素大小<br>            scroll:获取滚动距离==</p>
 
       
     </div>
@@ -575,7 +573,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/web/" rel="tag"># web</a>
+            <a href="/tags/js/" rel="tag"># js</a>
           
         </div>
       
@@ -667,7 +665,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -688,7 +686,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -709,7 +709,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
